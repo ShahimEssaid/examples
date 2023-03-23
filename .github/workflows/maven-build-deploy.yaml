@@ -126,7 +126,7 @@ jobs:
 
           stdbuf -oL echo "github context:"
           stdbuf -oL echo "${{ toJSON(github) }}"
-          
+
       - id: update-version
         name: Updating version if needed
         run: |
@@ -149,7 +149,7 @@ jobs:
               echo "Qualifying branch's version: ${BRANCH_VERSION_NEW}"
               BRANCH_NAME="${{ github.ref_name }}"
               BRANCH_NAME="${BRANCH_NAME//[^a-zA-Z0-9._-]/_}"
-               
+          
               if [[ ${BRANCH_VERSION_NEW} == *-SNAPSHOT ]]; then
                 BRANCH_VERSION_NEW="${BRANCH_VERSION_NEW%-SNAPSHOT}-${BRANCH_NAME}-SNAPSHOT"
               else
@@ -165,7 +165,7 @@ jobs:
             fi
             echo "Versions changed from ${BRANCH_VERSION} to ${BRANCH_VERSION_NEW} " >> $GITHUB_STEP_SUMMARY
           fi
-          
+
       - id: build-or-deploy
         name: Building or deploying
         env:
@@ -174,7 +174,7 @@ jobs:
           MVN_BUILD_DISTRIBUTION_SNAPSHOT_REPO_USERNAME: ${{ secrets.MVN_BUILD_DISTRIBUTION_SNAPSHOT_REPO_USERNAME }}
           MVN_BUILD_DISTRIBUTION_SNAPSHOT_REPO_PASSWORD: ${{ secrets.MVN_BUILD_DISTRIBUTION_SNAPSHOT_REPO_PASSWORD }}
           MVN_BUILD_GPG_PRIVATE_KEY_PASSPHRASE: ${{ secrets.MVN_BUILD_GPG_PRIVATE_KEY_PASSPHRASE }}
-            
+
         run: |
           if [[ ${{ env.DEBUG }} == true ]]; then
             set -x
