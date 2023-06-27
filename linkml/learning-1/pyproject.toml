@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "learning-1"
+version = "0.1.0"
+description = ""
+authors = ["Shahim Essaid <shahim@essaid.com>"]
+readme = "README.md"
+packages = [{include = "learning_1"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
