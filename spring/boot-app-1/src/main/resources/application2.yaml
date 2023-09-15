@@ -1,0 +1,7 @@
+value:
+  one: ValueOneTwo
+  two: ValueTwoTwo
+
+spring:
+  main:
+    allow-bean-definition-overriding: true

@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="spring.boot.app1.Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="SPRING_CONFIG_NAME" value="application2,application" />
+    </envs>
+    <module name="spring-boot-app-1" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.essaid.examples.springboot.app1.Application" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.essaid.examples.springboot.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
